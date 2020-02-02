@@ -37,13 +37,13 @@ public class Application {
 				Encrypter Encrypter = new Encrypter(); 
 				app.encryptedValue = Encrypter.encrypt(app.userInput); //Calls encrypter
 				String formattedEncryptValue = String.format("%04d", app.encryptedValue); //Reformats the returned value
-				System.out.printf("%s encrypts to %s", app.formattedUserInput, formattedEncryptValue); //Prints returned value
+				System.out.printf(app.formattedUserInput + " encrypts to " + formattedEncryptValue); //Prints returned value
 				break; 
 			case 2: //Run decrypter
 				Decrypter Decrypter = new Decrypter();
 				app.decryptedValue = Decrypter.decrypt(app.userInput); //calls decrypter
 				String formattedDecryptValue = String.format("%04d", app.decryptedValue); //Reformats the returned value
-				System.out.printf("%s decrypts to %s", app.formattedUserInput, formattedDecryptValue); //Prints returned value
+				System.out.printf(app.formattedUserInput + " decrypts to " + formattedDecryptValue); //Prints returned value
 				break;
 			default:
 		}
@@ -59,7 +59,7 @@ public class Application {
 			choice = input.nextInt();
 			if (choice == 1 || choice == 2 )
 				break;
-			System.out.println("\nInvalid entry. Please choose to either encrypt or decrypt.");
+			System.out.println("Invalid entry. Please choose to either encrypt or decrypt.");
 		} 
 	}
 
@@ -67,7 +67,7 @@ public class Application {
 	public void getProperUserInput() {
 		//Loop to get 4 digit input from user. Repeats until proper number received
 		while(true) { 
-			System.out.print("Please input the 4 digit number you want to encrypt or decrypt: ");
+			System.out.print("\nPlease input the 4 digit number you want to encrypt or decrypt: ");
 			userInput = input.nextInt(); //scan user input
 			if (userInput <= 9999 && userInput >= 0) { //checks user input for size. if good while loop breaks.
 				break;
